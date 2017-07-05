@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canada eCoin Accepted Here Widget</title>
+	
+	<style type="text/css">
+		
+		.cdn-accepted-widget {
+			width: 280px;
+			height: 54px;
+			position: relative;
+			margin: 1em auto;
+			font-family: "Lato", Helvetica, Arial, sans-serif;
+			font-size: 0.8em;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #2d2d2d;
+		}
+		.cdn-accepted-widget * {
+			-moz-transition: all 1.6s ease;
+			-webkit-transition: all 1.6s ease;
+			-o-transition: all 1.6s ease;
+			-ms-transition: all 1.6s ease;
+			transition: all 1.6s ease;		
+		}
+		.widget-background {
+			background-color: #fafafa;
+			border: 1px solid #dadada;
+			width: 280px;
+			height: 54px;
+			position: relative;
+			overflow: hidden;
+			
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+		.widget-background:hover { cursor: pointer; }
+		.accepted-here {
+			position: absolute; 
+			width: 100%;
+			height: 52px;
+			max-width: 256px;
+			left: 0;
+			top: 0;
+			padding: 0 0 0 42px;
+			background-color: #fafafa;
+			line-height: 54px;
+						
+		}
+		.logo {
+			position: absolute;
+			height: 60px;
+			width: 60px;
+			left: -30px;
+			top: -2px;
+			z-index: 10;
+			
+			-moz-transition: all 1.6s easeInOut;
+			-webkit-transition: all 1.6s easeInOut;
+			-o-transition: all 1.6s easeInOut;
+			-ms-transition: all 1.6s easeInOut;
+			transition: al 1.6s easeInOut;
+		}
+		.tx-input { line-height: 52px; padding: 0 12px; }
+		.tx-input input { 
+			background-color: #eaeaea; 
+			border: none; 
+			padding: 4px 6px;
+			line-height: 18px;
+			-moz-border-radius: 3px 0 0 3px;
+			-webkit-border-radius: 3px 0 0 3px;
+			border-radius: 3px 0 0 3px;
+		}
+		.tx-input button, .tx-input a { position: relative; top: 3px; }
+		.tx-input button { border: none; background: none; }
+		
+		.cdn-accepted-widget:hover .accepted-here {
+			left: 270px;
+		}
+		.cdn-accepted-widget:hover .logo {
+			-moz-transform: rotate(740deg);
+			-webkit-transform: rotate(740deg);
+			-o-transform: rorate(740deg);
+			-ms-transform: rotate(740deg);
+			transform: rotate(740deg);
+			left: 250px;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="cdn-accepted-widget">
+		<div class="logo"><img src="images/canadaecoin.png" width="60" height="60" /></div>
+		<div class="widget-background">
+			<div class="tx-input" spellcheck="false">
+				<input type="text" value="CN53b5pqaFr2ce7CLkhGyuM7KGNHek11Df" onClick="this.select()" />
+				<button class="copy-btn"><img src="images/copy.png" border="0" title="Copy to Clipboard" /></button>
+				<a href="Canadaecoin:CN53b5pqaFr2ce7CLkhGyuM7KGNHek11Df" target="_blank">
+					<img src="images/send-to.ico" border="0" title="Send to Wallet" />
+				</a>
+			</div>
+			<div class="accepted-here">Canada eCoin Accepted Here</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		var copyToClip = document.querySelector(".copy-btn");
+		
+		copyToClip.addEventListener('click', function(event) {
+			var toCopy = document.querySelector('.tx-input input');
+			toCopy.select();
+			try {
+				var itWorked = document.execCommand('copy');
+				if( itWorked ) { toCopy.classList.add('copied'); }
+			} catch(err) {}
+		});
+	</script>
+	
+</body>
+</html>
